@@ -1,11 +1,12 @@
-﻿using QuickBuy.Dominio.Enumerador;
+﻿using QuickBuy.Dominio.Entidades;
+using QuickBuy.Dominio.Enumerador;
 
 namespace QuickBuy.Dominio.ObjetoValor
 {
-    public class FormaPagamento
+    public class FormaPagamento : Entidade
     {
         public int Id { get; set; }
-        public int Nome { get; set; }
+        public string Nome { get; set; }
         public string Descricao { get; set; }
 
         public bool EhBoleto
@@ -29,6 +30,11 @@ namespace QuickBuy.Dominio.ObjetoValor
             {
                 return Id == (int)TipoFormaPagamentoEnum.Deposito;
             }
+        }
+
+        public override void Validate()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
